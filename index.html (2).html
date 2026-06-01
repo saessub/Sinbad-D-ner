@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sinbad Döner - Sanatla Harmanlanmış Lezzet</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-tint": "#ffba20",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "primary": "#ffdca1",
+                        "on-primary-fixed-variant": "#5e4200",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-tertiary": "#313030",
+                        "surface-container-highest": "#343539",
+                        "surface-container-lowest": "#0d0e12",
+                        "surface-bright": "#38393d",
+                        "on-tertiary-container": "#525151",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "surface-dim": "#121317",
+                        "on-surface-variant": "#d5c4ab",
+                        "surface-container-high": "#292a2e",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "primary-fixed": "#ffdea8",
+                        "surface-container": "#1e1f23",
+                        "secondary-container": "#474746",
+                        "primary-fixed-dim": "#ffba20",
+                        "surface": "#121317",
+                        "inverse-primary": "#7c5800",
+                        "error-container": "#93000a",
+                        "primary-container": "#ffb800",
+                        "outline-variant": "#514532",
+                        "outline": "#9e8f78",
+                        "on-secondary": "#313030",
+                        "error": "#ffb4ab",
+                        "tertiary": "#e3e0df",
+                        "on-primary-fixed": "#271900",
+                        "on-primary-container": "#6b4c00",
+                        "secondary": "#c8c6c5",
+                        "inverse-on-surface": "#2f3034",
+                        "on-background": "#e3e2e7",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-container": "#c7c4c3",
+                        "inverse-surface": "#e3e2e7",
+                        "on-surface": "#e3e2e7",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-variant": "#343539",
+                        "on-error-container": "#ffdad6",
+                        "background": "#121317",
+                        "on-error": "#690005",
+                        "on-primary": "#412d00",
+                        "surface-container-low": "#1a1b1f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Bodoni Moda"],
+                        "headline-lg": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(26,26,26,0.8) 0%, rgba(10,10,10,0.9) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(81, 69, 50, 0.3);
+        }
+        
+        .smoke-overlay {
+            background-image: radial-gradient(circle at center, transparent 0%, #121317 100%);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 30px rgba(255, 184, 0, 0.4);
+        }
+
+        /* Üst Panele Kadar Ulaşan Kusursuz Akışkan Duman Efekti */
+        @keyframes luxurySteamRise {
+            0% { 
+                transform: translateY(30vh) translateX(0) scale(0.8) rotate(0deg); 
+                opacity: 0; 
+            }
+            15% { 
+                opacity: 0.35; 
+                filter: blur(15px);
+            }
+            50% { 
+                opacity: 0.20; 
+                filter: blur(30px);
+            }
+            100% { 
+                transform: translateY(-85vh) translateX(-100px) scale(2.8) rotate(25deg); 
+                opacity: 0; 
+                filter: blur(50px);
+            }
+        }
+        
+        .steam-container {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 40; /* Üst Navigasyonun (50) hemen altında, görsellerin üzerinde */
+        }
+        
+        .steam-particle {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            width: 160px;
+            height: 160px;
+            /* Premium altın/amber tonlarında hafif sıcak bir duman rengi */
+            background: radial-gradient(circle, rgba(255, 220, 161, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+            animation: luxurySteamRise 10s infinite ease-in-out;
+        }
+        
+        /* Gerçekçi hava akımı için duman taneciklerinin zamanlama varyasyonları */
+        .steam-particle:nth-child(1) { left: 46%; animation-duration: 9s; animation-delay: 0s; }
+        .steam-particle:nth-child(2) { left: 54%; animation-duration: 12s; animation-delay: 2s; width: 220px; height: 220px; }
+        .steam-particle:nth-child(3) { left: 49%; animation-duration: 10s; animation-delay: 4.5s; }
+        .steam-particle:nth-child(4) { left: 52%; animation-duration: 13s; animation-delay: 1s; width: 190px; height: 190px; }
+        .steam-particle:nth-child(5) { left: 43%; animation-duration: 8.5s; animation-delay: 6s; }
+        .steam-particle:nth-child(6) { left: 50%; animation-duration: 11s; animation-delay: 3.5s; width: 170px; height: 170px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-[80px] bg-surface/70 backdrop-blur-xl border-b border-outline-variant transition-all duration-500" id="navbar">
+        <a class="font-display-lg text-primary tracking-tight text-4xl md:text-5xl italic drop-shadow-lg hover:opacity-80 transition-opacity duration-300" href="#">Sinbad Döner</a>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="font-label-lg text-label-lg text-primary border-b-2 border-primary pb-1 scale-95 transition-transform duration-200" href="#menu">Menü</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:opacity-80 transition-all duration-300" href="#hikayemiz">Hikayemiz</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:opacity-80 transition-all duration-300" href="#iletisim">İletişim</a>
+        </div>
+        <button class="font-label-lg text-label-lg bg-primary-container text-on-primary-container px-6 py-3 rounded hover:opacity-90 transition-opacity duration-300 shadow-[0_0_20px_rgba(255,184,0,0.3)]">
+            Sipariş Ver
+        </button>
+    </nav>
+
+    <!-- Hero Section (Duman Sınırlandırılmaması için overflow kaldırıldı) -->
+    <header class="relative w-full h-screen min-h-[650px] flex items-center justify-start">
+        <!-- Background Image & Overlays -->
+        <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+            <img alt="Premium Dürüm ve Seçkin Sunumlar" class="w-full h-full object-cover object-center scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLtxLgzCwy01qDNfttGFXmUeWkOTlKlg1G0rQN1CHW11odPf8cyH-zm3tEhHQG473lBG2XNEA3j0sDvECXxIcEgSzijFTtRs2eXSoc1N667ZQJriVCwuMZEk-L5XmAxxrc4ifbn-vFXdtEfb8vVrnpeIrfTeTJH8a2iekZu3CRR6f2CkaR33lx6iUzs6JTCAHOgWOpxJhICg683CnCDyn-YP89rt9NtTxQ7vAb_pxNi8kC3-6VwMPNCR"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50 z-10"></div>
+            <div class="absolute inset-0 smoke-overlay z-10 mix-blend-multiply opacity-60"></div>
+        </div>
+
+        <!-- Premium Hero Content -->
+        <div class="relative z-20 max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop pt-20">
+            <div class="max-w-2xl space-y-6">
+                <span class="text-primary font-label-lg tracking-[0.3em] uppercase block text-sm opacity-90 animate-pulse">Geleneksel Reçete & Saray Tılsımı</span>
+                <h1 class="font-display-lg text-5xl md:text-7xl text-on-surface leading-none text-glow">
+                    Ateşin <br><span class="italic text-primary font-light">Sanatla</span> Buluştuğu Nokta.
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
+                    Sinbad'ın efsanevi lezzet yolculuğu, modern gastronomi anlayışı ve meşe odununun asil ateşiyle yeniden tasarlandı.
+                </p>
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="#menu" class="font-label-lg text-label-lg bg-primary text-on-primary px-8 py-4 rounded hover:bg-primary-fixed-dim transition-all duration-300 shadow-lg block text-center">
+                        Menüyü Keşfet
+                    </a>
+                    <a href="#hikayemiz" class="font-label-lg text-label-lg border border-outline text-on-surface px-8 py-4 rounded hover:bg-surface-container-high transition-all duration-300 block text-center">
+                        Hikayemiz
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Steam Particles (Yukarı süzülen dumanlar) -->
+        <div class="steam-container">
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+        </div>
+    </header>
+
+    <!-- Signature Creations Section -->
+    <section class="py-24 bg-background relative z-30" id="menu">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-on-surface">İmza Dürümlerimiz</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant italic">Özenle Hazırlandı. Unutulmaz Tatlar.</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                <!-- Product Card 1 -->
+                <div class="group relative bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden hover:border-primary/50 transition-colors duration-500 flex flex-col h-full">
+                    <div class="aspect-[4/3] w-full overflow-hidden relative bg-surface-dim">
+                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Gourmet tavuk dürüm yakın çekim sunumu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvJQboYJ9lxD3RdiiY53mJ4Mk9Gl1izXUUNWOkXt2e3atHM5R7P97VZ2OaH9gZiEVNOemsfDseiEYE-QOWzDnqTUFSFDWTrKn7mktgqU3cOxnmeNEQpxGKHYpkaT6Rb2FrrsO2MooBpWKNRz_wHOs6XASQH-BKTcSuEV_qa6wd-9f2w7hTKWzv81iZc-nZU7XAhM_D0i2jFkAm_1lMNvzN2VQvsZymjOV70M3K4sR9D_XwkGfMVMRchyUs_PvNtNwHXdxsjde85g"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60"></div>
+                        <div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-outline-variant">
+                            <span class="font-label-lg text-label-lg text-primary">185 ₺</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Klasik Tavuk Dürüm</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Özel marine edilmiş ızgara tavuk, taze yeşillikler, kornişon turşu ve imza sarımsaklı mayonezimiz ile odun ateşinde pişmiş lavaşta.
+                        </p>
+                        <button class="w-full font-label-lg text-label-lg border border-outline text-on-surface py-3 rounded hover:border-primary hover:text-primary transition-colors duration-300 bg-transparent flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                            Sepete Ekle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="group relative bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden hover:border-primary/50 transition-colors duration-500 flex flex-col h-full">
+                    <div class="aspect-[4/3] w-full overflow-hidden relative bg-surface-dim">
+                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Lüks gurme et dürüm sunumu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkz4J641TuBYr1j-qRY31glulM9jxmB-HgBV8qXs4I7WV-A1OKW_uK5JlFtZRw7eh3d6nI-DjMdXlAyKarRKt2TTB8LhHPGNUQUt29n96b2LJPOGYTG2tHTm9PZFIByz_GsPeywELgxPtetkmNIc1QNrTEtTr4__95F67m8mmvyW9hIWnHljF-z4IPUt_V5lFG2ILses8Y6a9Pp8Ka3yg9znLOQwA09Ok4smVTKAeq3hqCXhhJzizjGfkmp1zhsqYVNvc7EDL4Eg"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60"></div>
+                        <div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-outline-variant">
+                            <span class="font-label-lg text-label-lg text-primary">245 ₺</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Gurme Et Dürüm</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Ağır ateşte pişmiş dana eti, karamelize soğan, cheddar peyniri ve trüflü aioli sos ile eşsiz bir uyum.
+                        </p>
+                        <button class="w-full font-label-lg text-label-lg border border-outline text-on-surface py-3 rounded hover:border-primary hover:text-primary transition-colors duration-300 bg-transparent flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                            Sepete Ekle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="group relative bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden hover:border-primary/50 transition-colors duration-500 flex flex-col h-full md:col-span-2 lg:col-span-1">
+                    <div class="aspect-[4/3] w-full overflow-hidden relative bg-surface-dim">
+                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Acılı Ateşli Sinbad dürüm arayüz görseli" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzpGUHSEy6pTozRmBe8Lzp4gX8lfcUBQKdOTIOQ_r4XJXeGwohsRoAGs9q1rOpwnFiIXipBVagmBjOKZrm2A-SrvOQGXtx7_1FID7NdMUGNn4yUT3psrYr4geHZ5K12f1Wdxgkt0mdts-iqgyDG2mbqTeceBZWREGu8_f2nRhFtU7P2V7ee2NR0qhT0Xdr6Ao29pxqxfG0DwHO4qdsPQVRVc57LpPXjEttBF6QhiA5pYukYAkr2enWM_uBZJWX-v2ds-ILUhZHYw"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60"></div>
+                        <div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-outline-variant">
+                            <span class="font-label-lg text-label-lg text-primary">195 ₺</span>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-error-container text-on-error-container px-2 py-1 rounded-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                            <span class="font-label-sm text-label-sm">Acılı</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Ateşli Sinbad</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Acı severler için tasarlandı. Baharatlı tavuk dilimleri, jalapeño, köz biber ve özel sriracha mayonez.
+                        </p>
+                        <button class="w-full font-label-lg text-label-lg border border-outline text-on-surface py-3 rounded hover:border-primary hover:text-primary transition-colors duration-300 bg-transparent flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                            Sepete Ekle
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Bento Grid) -->
+    <section class="py-24 bg-surface-container-lowest relative z-30" id="hikayemiz">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px]">
+                <!-- Large Image Block -->
+                <div class="md:col-span-2 md:row-span-2 relative rounded-xl overflow-hidden group">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Odun ateşinde hazırlanan usta döner yapımı" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALkY0_vSP_3_0shqfnY4qs-HQEEMxz0rzcYKQSWbRW6iU-bXTzF_FT1DGQXASKIxk5pOQqXCj3Nw-Gs2zjP1jH0piR6VxpRddHldKLu_rUE47XPjWPEP_0AokyvDZ2vvT_9JKPStSwwVy7H0Exs9eyIpeXmr9rXiVW8JReaM_sScNvaPk4E9HJt2fcN9IGi2nSvdToE73u1sy6hXUXdUYScyiJ8KijtC-8BT-xIxtWQNhXNfpx_oPxAjIeG7sBBCtCKoQQZNYUiw"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface mb-2">Ateşin Gücü</h3>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Gerçek lezzet, sabır ve doğru teknikle odun ateşinde mühürlenir.</p>
+                    </div>
+                </div>
+
+                <!-- Small Text Block -->
+                <div class="bg-surface-container rounded-xl p-8 flex flex-col justify-center border border-outline-variant hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4">diamond</span>
+                    <h4 class="font-headline-md text-headline-md text-on-surface mb-2">Premium Kalite</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Sadece en seçkin tedarikçilerden alınan, günlük taze malzemeler.</p>
+                </div>
+
+                <!-- Small Image Block -->
+                <div class="relative rounded-xl overflow-hidden group">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Özel gastronomi baharatları seçkisi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOjPpvb72dmSuybCeuW_RNvEYwr3C5fdAZJpgKp9LF0GmJZpzcnmvTVutGS40nrNlwfB8HwHdsFaTdtmGiThhdqNpHzSg_WUdzGUfkaa3W-BvOn30jQPMpZOyz5yMH3DXI5xLhz3hJOmPeq1O7BOfU7DZtgHrUyHIe0GWpsAMdWSQzunTVGTK949fjzNhTwVWRaIT4K-HUbBabbMROG9tS0H7ynrtjunDhq85K_RxuvAv7cRriiFWtuLep2RRXF1ZdklQs5OuxnA"/>
+                    <div class="absolute inset-0 bg-black/50"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <h4 class="font-headline-md text-headline-md text-on-surface mb-1">Gizli Reçeteler</h4>
+                        <p class="font-body-md text-body-md text-on-surface-variant text-sm">Nesilden nesile aktarılan baharat karışımları.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest w-full px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-gutter border-t border-outline-variant relative z-30" id="iletisim">
+        <div class="font-display-lg text-primary text-3xl">
+            Sinbad Döner
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Konumlar</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Kariyer</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Gizlilik Politikası</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Bize Ulaşın</a>
+        </div>
+        <div class="font-body-md text-body-md text-on-surface-variant text-sm text-center md:text-right">
+            © 2026 Sinbad Döner. Sanatla Harmanlanmış Lezzet.
+        </div>
+    </footer>
+
+    <script>
+        // Clean and optimized reactive scrolling for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.remove('bg-surface/70');
+                nav.classList.add('bg-surface/95', 'shadow-2xl');
+            } else {
+                nav.classList.remove('bg-surface/95', 'shadow-2xl');
+                nav.classList.add('bg-surface/70');
+            }
+        });
+    </script>
+</body>
+</html>
